@@ -1,0 +1,10 @@
+TAREA: task_set_up (Parámetros de Operación & LCD Display)
+
+DESCRIPCIÓN:
+Proporciona una interfaz de usuario para la lectura y modificación de los parámetros críticos del sistema cuando se encuentra en Modo Configuración.
+
+IMPLEMENTACIÓN TÉCNICA:
+- Gestiona un menú jerárquico con tres estados visuales: Configuración de Umbral de Personas, Configuración de Tiempo de Espera y Pantalla de Salida.
+- Interacción: Utiliza el evento del botón NEXT para navegar entre pantallas y el botón ENTER para incrementar los valores o confirmar acciones.
+- Consumo de Eventos: Implementa una variable local de evento que se limpia tras cada procesamiento, garantizando que un "click" físico realice una sola acción lógica.
+- Los cambios impactan directamente en la estructura global 'sistema_config'.

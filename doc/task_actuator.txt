@@ -1,0 +1,10 @@
+TAREA: task_actuator (Leds & Buzzer)
+
+DESCRIPCIÓN:
+Encargada de la etapa de "Actuar". Refleja los estados lógicos del sistema en las salidas físicas de la placa.
+
+IMPLEMENTACIÓN TÉCNICA:
+- Baliza de Sistema: Implementa un parpadeo de 500ms (1Hz) para el LED de estado Activo y un encendido fijo para el modo Desactivado, utilizando contadores de tiempo no bloqueantes.
+- Indicadores de Motor: Controla dos LEDs de potencia que representan la velocidad actual de la escalera (Mínima/Máxima).
+- Sirena (Buzzer): Genera una señal intermitente de advertencia (200ms ON/OFF) cuando el sistema está activo pero la escalera se encuentra detenida (IDLE).
+- Abstracción: La tarea no conoce la lógica del sistema; solo consulta 'task_normal_get_state()' y actualiza los pines GPIO correspondientes.

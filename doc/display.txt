@@ -1,0 +1,10 @@
+BIBLIOTECA: display
+
+DESCRIPCIÓN:
+Driver de bajo nivel para la gestión del LCD 16x2 basado en el controlador Hitachi HD44780.
+
+IMPLEMENTACIÓN TÉCNICA:
+- Modo de operación: Bus de 4 bits para ahorro de pines de E/S.
+- Flexibilidad de Hardware: La función 'lcd_write_4bit' ha sido diseñada para manejar pines de datos no correlativos en el Puerto C (PC5, PC6, PC8, PC9), permitiendo un cableado más eficiente en la placa Nucleo.
+- Gestión de Tiempos: Implementa retardos de microsegundos mediante bucles 'nop' para cumplir con los tiempos de subida/bajada del pin Enable y los tiempos de procesamiento internos del display.
+- Funcionalidad: Provee funciones de inicialización, borrado y escritura de cadenas de caracteres con posicionamiento por coordenadas (Fila, Columna).

@@ -1,0 +1,9 @@
+APLICACIÓN: app
+
+DESCRIPCIÓN:
+Archivo coordinador que integra todas las tareas del sistema de control de la escalera mecánica.
+
+DETALLES:
+- Implementa el 'app_init()' donde se inicializan todos los periféricos y estructuras de datos de las tareas.
+- Implementa el 'app_update()' que es llamado por el Super-Loop del main.
+- Organización: Gestiona la transición global de modos (Normal <-> Set Up) y asegura que las tareas de escrutinio (Sensores y Temperatura) se ejecuten en cada ciclo para mantener la reactividad del sistema.

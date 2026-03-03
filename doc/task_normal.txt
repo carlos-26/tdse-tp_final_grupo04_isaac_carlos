@@ -1,0 +1,10 @@
+TAREA: task_normal (Monitoreo & Control de la Escalera)
+
+DESCRIPCIÓN:
+Implementa la lógica principal de control de la escalera mecánica y la gestión de seguridad de paso.
+
+IMPLEMENTACIÓN TÉCNICA:
+- Máquina de Estados Principal: Gestiona los estados DESACTIVADO, IDLE (Activo pero frenado), VEL_MIN, VEL_MAX y ESPERANDO (Temporizador de espera).
+- Lógica de Carga: Controla la velocidad del motor basándose en el contador de personas y el umbral configurado por el usuario.
+- Seguridad: Implementa la lógica de la Barrera Infrarroja. El sistema tiene prohibido pasar al estado de reposo (frenado) si el sensor detecta una obstrucción, independientemente del tiempo transcurrido o el conteo de personas.
+- Temporización: Utiliza contadores descendentes sincronizados con el tick de 1ms para gestionar el tiempo de espera antes del frenado.

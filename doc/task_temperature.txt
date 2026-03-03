@@ -1,0 +1,10 @@
+TAREA: task_temperature (ADC)
+
+DESCRIPCIÓN:
+Gestiona la lectura y conversión de señales analógicas para el monitoreo de temperatura ambiente y del microcontrolador.
+
+IMPLEMENTACIÓN TÉCNICA:
+- Utiliza el periférico ADC1 en modo polling no bloqueante.
+- Muestreo Secuencial: Debido a las limitaciones del registro de datos único en la serie F1, la tarea reconfigura dinámicamente el canal del ADC (Rank 1) en cada ciclo de medición para alternar entre el canal 0 (LM35 externo) y el sensor de temperatura interno.
+- Configuración de Hardware: Se utiliza un tiempo de muestreo elevado (239.5 ciclos) para compensar la impedancia de los sensores y estabilizar la lectura.
+- Procesamiento: Convierte los valores crudos (12 bits) a grados Celsius utilizando aritmética de punto flotante y las fórmulas específicas para el LM35 y el sensor de silicio interno.

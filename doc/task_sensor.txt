@@ -1,0 +1,10 @@
+TAREA: task_sensor (Dip Switches & Pulsadores)
+
+DESCRIPCIÓN:
+Esta tarea es la encargada de la etapa de "Escrutar" del modelo EPA. Gestiona 7 entradas digitales: 5 pulsadores (Ingreso, Egreso, Activar, Next, Enter/Esc) y 2 Dip Switches (Barrera Infrarroja y Desactivación).
+
+IMPLEMENTACIÓN TÉCNICA:
+- Utiliza una máquina de estados de 4 pasos (UP, FALLING, DOWN, RISING) para cada sensor.
+- Implementa un algoritmo de filtrado de rebotes (debouncing) de 20ms mediante contadores de ticks, evitando el uso de funciones bloqueantes.
+- Arquitectura Event-Triggered: Al confirmar una transición válida de estado, la tarea "envía" eventos globales mediante la función 'task_system_put_event()'.
+- Los sensores se gestionan mediante una tabla de configuración (task_sensor_cfg_list) para facilitar la escalabilidad.
